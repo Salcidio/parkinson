@@ -1,0 +1,46 @@
+# Parkinson's Multi-Agent System - Python Dependencies
+
+# Core Data Science
+pandas>=1.5.0
+numpy>=1.23.0
+scipy>=1.10.0
+
+# Machine Learning
+scikit-learn>=1.2.0
+lightgbm>=3.3.5
+xgboost>=1.7.0
+
+# Interpretability
+shap>=0.42.0
+
+# Model Serialization
+joblib>=1.2.0
+onnx>=1.14.0  # For ONNX export (future)
+
+# Deep Learning  (for tensor format export)
+tensorflow>=2.12.0  # Optional - for SavedModel export
+torch>=2.0.0  # Optional - for PyTorch export
+
+# LLM Integration (for clinical narratives)
+langchain-community>=0.0.20
+
+# Hyperparameter Tuning (Optional)
+optuna>=3.1.0
+
+# Visualization
+matplotlib>=3.6.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# Notebook Support
+jupyter>=1.0.0
+ipywidgets>=8.0.0
+tqdm>=4.65.0
+
+# Google Colab Utilities (optional - installed in Colab)
+# google-colab  # Don't install locally
+
+# Development Tools (optional)
+pytest>=7.2.0
+black>=23.1.0
+flake8>=6.0.0
