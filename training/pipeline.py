@@ -314,7 +314,7 @@ class TrainingPipeline:
 
 if __name__ == "__main__":
     # Test training pipeline
-print(f"Testing Training Pipeline")
+    print(f"Testing Training Pipeline")
     
     # Create pipeline
     pipeline = TrainingPipeline()

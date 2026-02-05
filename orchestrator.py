@@ -4,7 +4,7 @@ import numpy as np
 
 from core.protocol import AgentPayload
 from langchain_community.llms import Ollama 
-# NOTE: Use Ollama with "mistral" or "llama3" for FREE local inference.
+# NOTE:  Ollama with "mistral" or "llama3" for FREE local inference.
 
 class ClinicalOrchestrator:
     def __init__(self, config: Optional[Any] = None):

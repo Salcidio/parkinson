@@ -50,14 +50,13 @@ class PDSystem:
         # 1. Decentralized Analysis
         payloads = [agent.analyze(patient_id=self.patient_id) for agent in self.agents]
         
-        # 2. Weighted Fusion
-        # Logic: Global Score = Σ (Pred_i * (1/Var_i)) / Σ (1/Var_i)
+        # 2.Fusion
         fusion_result = self.orchestrator.uncertainty_aware_fusion(payloads)
         
         # 3. Interpretative Narrative (Using local Ollama/Mistral)
         summary = self.orchestrator.generate_report(fusion_result)
         
-        # 4. Calculate confidence interval
+        # 4.Confidence interval
         ci = self.orchestrator.calculate_confidence_interval(payloads)
         
         return {
@@ -68,7 +67,6 @@ class PDSystem:
         }
 
 if __name__ == "__main__":
-    # Example usage
     config = Config()
     config.setup()
     

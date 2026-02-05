@@ -341,22 +341,22 @@ class ClinicalAgent(ABC):
         if 'pickle' in export_formats:
             model_file = save_dir / f"{self.agent_name}_model.pkl"
             joblib.dump(self.model, model_file)
-            print(f"✓ Saved model (pickle): {model_file}")
+            print(f" Saved model (pickle): {model_file}")
         
         # Metadata
         metadata_file = save_dir / f"{self.agent_name}_metadata.json"
         if self.model_metadata:
             with open(metadata_file, 'w') as f:
                 json.dump(self.model_metadata.to_dict(), f, indent=2)
-            print(f"✓ Saved metadata: {metadata_file}")
+            print(f" Saved metadata: {metadata_file}")
         
         # ONNX export (future enhancement)
         if 'onnx' in export_formats:
-            print(f"⚠ ONNX export not yet implemented")
+            print(f" ONNX export not yet implemented")
         
         # TensorFlow/PyTorch (future enhancement)
         if 'tensorflow' in export_formats or 'pytorch' in export_formats:
-            print(f"⚠ TensorFlow/PyTorch export not yet implemented")
+            print(f" TensorFlow/PyTorch export not yet implemented")
     
     def load_model(self, load_dir: Path):
         """Load model from disk
@@ -370,7 +370,7 @@ class ClinicalAgent(ABC):
         model_file = load_dir / f"{self.agent_name}_model.pkl"
         if model_file.exists():
             self.model = joblib.load(model_file)
-            print(f"✓ Loaded model: {model_file}")
+            print(f" Loaded model: {model_file}")
         else:
             raise FileNotFoundError(f"Model file not found: {model_file}")
         
@@ -381,7 +381,7 @@ class ClinicalAgent(ABC):
                 metadata_dict = json.load(f)
                 self.model_metadata = ModelMetadata.from_dict(metadata_dict)
                 self.feature_names = self.model_metadata.feature_names
-            print(f"✓ Loaded metadata: {metadata_file}")
+            print(f" Loaded metadata: {metadata_file}")
         
         # Setup SHAP
         if self.model:
