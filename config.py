@@ -53,18 +53,10 @@ class PathConfig:
 @dataclass
 class DataConfig:
     """Data files and preprocessing configuration"""
-    # PPMI data files
-    motor_file: str = "MDS_UPDRS_Part_III.csv"
-    datscan_file: str = "DaTscan_Analysis.csv"
-    moca_file: str = "MoCA.csv"
-    non_motor_sleep_file: str = "non_motor_sleep.csv"
-    non_motor_depression_file: str = "non_motor_depression.csv"
-    non_motor_cognitive_file: str = "non_motor_cognitive.csv"
-    
-    # Alternative merged files from core_load
-    motor_file_alt: str = "formatted_parkinsons_dataset_dataset1.csv"
-    datscan_file_alt: str = "datscan.csv"
-    merged_non_motor_file: str = "merged_non_motor_data.csv"
+    # Standardized merged data files
+    motor_file: str = "motor_merged.csv"
+    datscan_file: str = "datscan.csv"
+    non_motor_file: str = "non_motor_merged.csv"
     
     # Data preprocessing
     test_size: float = 0.2

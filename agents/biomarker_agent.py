@@ -58,9 +58,8 @@ class BiomarkerAgent(ClinicalAgent):
     def ingest_ppmi_data(self) -> pd.DataFrame:
         """Load DaTSCAN imaging data
         
-        Supports multiple file formats:
-        1. Standard PPMI DaTscan_Analysis.csv
-        2. Preprocessed datscan.csv
+        Supports format:
+        1. Standardized datscan.csv
         
         Returns:
             DataFrame with DaTSCAN SBR data

@@ -64,9 +64,7 @@ class TrainingPipeline:
         
         # Determine data file
         if data_file is None:
-            data_file = self.data_dir / "formatted_parkinsons_dataset_dataset1.csv"
-            if not data_file.exists():
-                data_file = self.data_dir / "MDS_UPDRS_Part_III.csv"
+            data_file = self.data_dir / self.config.data.motor_file
         
         # Initialize and load data
         agent = MotorAgent(data_path=str(data_file), config=self.config)
@@ -116,9 +114,7 @@ class TrainingPipeline:
         
         # Determine data file
         if data_file is None:
-            data_file = self.data_dir / "datscan.csv"
-            if not data_file.exists():
-                data_file = self.data_dir / "DaTscan_Analysis.csv"
+            data_file = self.data_dir / self.config.data.datscan_file
         
         # Initialize and load data
         agent = BiomarkerAgent(data_path=str(data_file), config=self.config)
@@ -158,15 +154,7 @@ class TrainingPipeline:
         
         # Determine data file
         if data_file is None:
-            data_file = self.data_dir / "merged_non_motor_data.csv"
-            if not data_file.exists():
-                # Try domain-specific file
-                domain_files = {
-                    'cognitive': 'MoCA.csv',
-                    'sleep': 'non_motor_sleep.csv',
-                    'depression': 'non_motor_depression.csv'
-                }
-                data_file = self.data_dir / domain_files.get(domain, 'MoCA.csv')
+            data_file = self.data_dir / self.config.data.non_motor_file
         
         # Initialize and load data
         agent = NonMotorAgent(domain=domain, data_path=str(data_file), config=self.config)

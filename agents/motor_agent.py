@@ -47,9 +47,8 @@ class MotorAgent(ClinicalAgent):
     def ingest_ppmi_data(self) -> pd.DataFrame:
         """Load UPDRS-III motor assessment data
         
-        Supports multiple file formats:
-        1. Standard PPMI MDS_UPDRS_Part_III.csv
-        2. Preprocessed formatted_parkinsons_dataset_dataset1.csv
+        Supports format:
+        1. Standardized motor_merged.csv
         
         Returns:
             DataFrame with motor assessment data

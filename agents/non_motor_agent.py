@@ -69,8 +69,7 @@ class NonMotorAgent(ClinicalAgent):
         """Load non-motor assessment data
         
         Supports:
-        1. Domain-specific files (MoCA.csv, sleep.csv, etc.)
-        2. Merged non-motor data file
+        1. Standardized non_motor_merged.csv
         
         Returns:
             DataFrame with non-motor data
